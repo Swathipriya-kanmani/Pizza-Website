@@ -1,0 +1,104 @@
+html {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+ .header{
+    display: flex;
+    justify-content: baseline;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+  body {
+      position: absolute;
+      margin-bottom: 60px;
+      background-image: url('./images/img3.jpg');
+      background-repeat: no-repeat;
+      height: 100%;
+      background-size: cover;
+      overflow: hidden;
+  }
+  
+  
+
+ul{
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    left: -10px;
+    text-align: justify; 
+    width: 1368px;
+    display: flex;
+    flex-wrap: wrap;
+    top: -10px;
+ } 
+ 
+
+
+ li{
+     display: inline-block;
+     cursor: pointer;
+     /* font-size: 30px; */
+     /* text-align: right;  */
+ }
+
+
+ li a{
+     display: block;
+     color: black;
+     padding: 13px 26px;
+     text-decoration: none;
+     font-size: 30px;
+     /* text-align: justify; */
+ }
+
+ li a:hover{
+    background-color: palevioletred;
+ }
+
+  
+  .display-4 {
+    position: absolute;
+      background-color:black;
+      font-size: 60px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+    top: 20px;
+    left: 150px;
+    width: 1040px;
+  }
+  
+  p img{
+    position: absolute;
+    top: 150px;
+    left: 345px;
+  }
+
+
+  @-webkit-keyframes display-4 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+  
+
+
+

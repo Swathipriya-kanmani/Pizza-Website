@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="Registration.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body onload="generateCaptcha()">
+    <div class="container ">
+        <div class="row content1 d-flex justify-content-center align-items-center">
+            <div class="col-md-5 col-lg-5">
+                <div class="box shadow bg-white p-4">
+                    <h4 class="mb-4 text-center">Registration Form</h4>
+
+                    <form id="form" onsubmit="signUp(event);" autocomplete="off" role="form">
+                        <div class="d-flex gap-2">
+
+                            <div class="mb-2 form-group">
+                                <label for="fullname" class="form-label">FullName</label>
+                                <input type="text" class="form-control" id="fullname" onkeyup="validatefullname()">
+                                <div class="error"></div>
+                            </div>
+
+                            <div class="mb-2 form-group">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" onkeyup="validateusername()">
+                                <div class="error"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-2 form-group">
+                            <label for="email" class="form-label">Eamil adddress</label>
+                            <input type="email" class="form-control" id="email" onkeyup="validateemail()">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="mb-2 form-group">
+                            <label class="form-label" for="phoneno">Phone Number</label>
+                            <input class="form-control" type="tel" id="phonenumber" placeholder="123 456 7890"
+                                maxlength="10" minlength="10" onkeyup="validatephonenumber()">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="mb-2 form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password1" class="form-control" onkeyup="validatePassword()">
+                            <div class="error"></div>
+
+                        </div>
+
+                        <div class="mb-2 form-group">
+                            <label for="password" class="form-label">Confirm Password</label>
+                            <input type="password" id="password2" class="form-control"
+                                onkeyup="validateConfirmPassword()">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Captcha</label>
+
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" aria-describedby="button-addon2" id="captcha">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                    onclick="generateCaptcha()">Refresh</button>
+                            </div>
+
+                            <label for="Enter Captcha" class="form-label">Enter Captcha</label>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" id="inputText" class="form-control" onkeyup="check()">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="d-grid mt-3 mb-3">
+                            <button type="submit" disabled id="btnsumbit" class="btn btn-success">Register</button>
+                        </div>
+
+                        <p>Already have an account? <a href="login.html">Login Here.</a></p>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var form = document.getElementById('form');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            validatefullname();
+            validateusername();
+            validateemail();
+            validatephonenumber();
+            validatePassword();
+            validateConfirmPassword();
+            check();
+            saveFormData();
+        });
+
+        const seterror = (Element, message) => {
+            const inputcontrol = Element.parentElement;
+            const errordisplay = inputcontrol.querySelector(".error");
+
+            errordisplay.innerText = message;
+            inputcontrol.classList.add('error');
+            inputcontrol.classList.remove('success')
+        }
+
+        const setsuccess = Element => {
+            const inputcontrol = Element.parentElement;
+            const errordisplay = inputcontrol.querySelector(".error");
+
+            errordisplay.innerText = '';
+            inputcontrol.classList.add('success');
+            inputcontrol.classList.remove('error')
+        }
+
+        const isvalidemail = email => {
+            var re = /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+
+        function validatefullname() {
+            const fullname = document.getElementById("fullname");
+            const fname = fullname.value.trim();
+
+            if (fname === "") {
+                seterror(fullname, 'Fullname is required');
+                return false;
+            } else {
+                setsuccess(fullname);
+                return true;
+            }
+        }
+        function validateusername() {
+            const username = document.getElementById("username");
+            const usernamevalue = username.value.trim();
+            if (usernamevalue === '') {
+                seterror(username, "Username is required");
+                return false;
+            }
+            else {
+                setsuccess(username);
+                return true;
+            };
+        }
+        function validateemail() {
+            const email = document.getElementById('email');
+            const emailvalue = email.value.trim();
+            if (emailvalue === "") {
+                seterror(email, "email is required");
+                return false;
+
+            }
+            else if (!isvalidemail(emailvalue)) {
+                seterror(email, "provide a valid eamil address");
+                return false;
+
+            }
+            else {
+                setsuccess(email);
+                return true;
+            };
+        }
+        function validatephonenumber() {
+            const phonenumber = document.getElementById('phonenumber');
+            const phonevalue = phonenumber.value.trim();
+            if (phonevalue === "") {
+                seterror(phonenumber, "Phone Number is required");
+                return false;
+            }
+            else if (phonevalue.length !== 10) {
+                seterror(phonenumber, "Enter valid phone Number 10 digits");
+                return false;
+            }
+            else if (isNaN(phonevalue)) {
+                seterror(phonenumber, "Enter valid Numeric values");
+                return false
+            }
+            else {
+                setsuccess(phonenumber);
+                return true
+            }
+        }
+        function validatePassword() {
+            const password1 = document.getElementById('password1');
+            const pass1value = password1.value.trim();
+            if (pass1value === "") {
+                seterror(password1, "password is required");
+                return false;
+            }
+            else if (pass1value.length < 8) {
+                seterror(password1, "password must be at least 8 character.");
+                return false
+
+            } else {
+                setsuccess(password1);
+                return true
+            }
+        }
+        function validateConfirmPassword() {
+            const password1 = document.getElementById('password1');
+            const pass1value = password1.value.trim();
+
+            const password2 = document.getElementById('password2');
+            const pass2value = password2.value.trim();
+            if (pass2value === "") {
+                seterror(password2, "please confirm your password");
+                return false
+
+            } else if (pass2value !== pass1value) {
+                seterror(password2, "password doesn't match");
+                return false
+
+            } else {
+                setsuccess(password2);
+                return true
+            }
+        }
+
+        var captcha;
+        function generateCaptcha() {
+            var a = Math.floor((Math.random() * 10));
+            var b = Math.floor((Math.random() * 10));
+            var c = Math.floor((Math.random() * 10));
+            var d = Math.floor((Math.random() * 10));
+
+            captcha = a.toString() + b.toString() + c.toString() + d.toString();
+            document.getElementById("captcha").value = captcha;
+        }
+
+        function check() {
+            var confirmcaptcha = document.getElementById("inputText").value;
+            var confirmcaptcha1 = document.getElementById("inputText")
+
+            if (confirmcaptcha === "") {
+                seterror(confirmcaptcha1, "Enter captcha")
+                return false;
+            }
+            else if (confirmcaptcha !== captcha) {
+                seterror(confirmcaptcha1, "captcha doesn't match");
+                return false
+                // document.getElementById("inputText").style.borderColor = "green";
+            }
+            else {
+                // document.getElementById("inputText").style.borderColor = "red";
+                setsuccess(confirmcaptcha1);
+                return true
+            }
+        }
+        // const fullname = document.getElementById("fullname");
+        // const username = document.getElementById("username");
+        // const email = document.getElementById('email');
+        // const phonenumber = document.getElementById('phonenumber');
+        // const password1 = document.getElementById('password1');
+        // const password2 = document.getElementById('password2');
+        // var confirmcaptcha1 = document.getElementById("inputText");
+        // function validatebtnform() {
+        //     const isvalidatefullname = validatefullname();
+        //     const isvalidateusername = validateusername();
+        //     const isvalidateemail = validateemail();
+        //     const isvalidatephonenumber = validatephonenumber();
+        //     const isvalidatePassword = validatePassword();
+        //     const isvalidateConfirmPassword = validateConfirmPassword();
+        //     const ischeck = check();
+        //     if (isvalidatefullname && isvalidateusername && isvalidateemail && isvalidatephonenumber && isvalidatePassword && isvalidateConfirmPassword && ischeck) {
+        //         document.getElementById("btnsumbit").disabled = false;
+        //     } else {
+        //         document.getElementById("btnsumbit").disabled = true;
+        //     }
+        // }
+        // fullname.addEventListener('input', validatebtnform);
+        // username.addEventListener('input', validatebtnform);
+        // email.addEventListener('input', validatebtnform);
+        // phonenumber.addEventListener('input', validatebtnform);
+        // password1.addEventListener('input', validatebtnform);
+        // password2.addEventListener('input', validatebtnform);
+        // confirmcaptcha1.addEventListener('input', validatebtnform);
+        const fullname = document.getElementById("fullname");
+        const username = document.getElementById("username");
+        const email = document.getElementById('email');
+        const phonenumber = document.getElementById('phonenumber');
+        const password1 = document.getElementById('password1');
+        const password2 = document.getElementById('password2');
+        const confirmcaptcha1 = document.getElementById("inputText");
+        const submitBtn = document.getElementById("btnsubmit");
+
+        function validatebtnform() {
+            const isvalidatefullname = validatefullname();
+            const isvalidateusername = validateusername();
+            const isvalidateemail = validateemail();
+            const isvalidatephonenumber = validatephonenumber();
+            const isvalidatePassword = validatePassword();
+            const isvalidateConfirmPassword = validateConfirmPassword();
+            const ischeck = check();
+            if (isvalidatefullname && isvalidateusername && isvalidateemail && isvalidatephonenumber && isvalidatePassword && isvalidateConfirmPassword && ischeck) {
+                // submitBtn.disabled = false;
+                document.getElementById("btnsumbit").disabled = false;
+
+            } else {
+                // submitBtn.disabled = true;
+                document.getElementById("btnsumbit").disabled = true;
+
+            }
+        }
+
+        function disableBtnOnSubmit() {
+            // submitBtn.disabled = true;
+            document.getElementById("btnsumbit").disabled = true;
+            generateCaptcha();
+
+        }
+
+        fullname.addEventListener('input', validatebtnform);
+        username.addEventListener('input', validatebtnform);
+        email.addEventListener('input', validatebtnform);
+        phonenumber.addEventListener('input', validatebtnform);
+        password1.addEventListener('input', validatebtnform);
+        password2.addEventListener('input', validatebtnform);
+        confirmcaptcha1.addEventListener('input', validatebtnform);
+        document.getElementById('form').addEventListener('submit', disableBtnOnSubmit);
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="RegAndLoginLocalStoreScript.js"></script>
+</body>
+
+</html>

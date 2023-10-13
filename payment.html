@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Payment Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+    <form class="mb-3" id="form" role="form" onsubmit="signIn(event);" autocomplete="off">
+        <div class="paym" id="payment">
+            <div>
+                <h1>Payment</h1>
+                <label for="cashcard">Payment Mode</label><br><br>
+                <select name="cashcard" id="cashcard" class="cashhcard" onchange="changeStatus()">
+                    <option value="Select" disabled selected>------Select------</option>
+                    <option value="Card">Card</option>
+                    <option value="Cash">Cash</option>
+                </select>
+                <div id="cashcard-error" class="error"></div>
+            </div>
+            <br><br><br>
+            <div>
+                <label for="nameoncrd" id="namecard">Name On Card</label><br><br>
+                <input type="text" id="innamecard" class="nameoncard">
+                <div id="namecard-error" class="error"></div>
+            </div>
+            <br><br><br>
+            <div>
+                <label for="ccn" id="cdnumber">Credit Card Number</label><br><br>
+                <input type="text" class="ccn" id="incdnumber">
+                <div id="cdnumber-error" class="error"></div>
+            </div>
+            <br><br><br>
+            <div>
+                <label for="expdate" id="expirydate">Expiry Date</label><br><br>
+                <input type="date" class="ed" id="inexpirydate">
+                <div id="expirydate-error" class="error"></div>
+            </div>
+            <br><br><br>
+            <div>
+                <label for="cvvnumb" id="cvvnumber">CVV Number</label><br><br>
+                <input type="text" class="cvvnumb" id="incvvnumber"><br><br>
+                <div id="cvvnumber-error" class="error"></div>
+            </div>
+            <br>
+            <button type="submit" id="btnsubmit">Pay</button>
+            <br><br>
+        </div>
+    </form>
+
+    <script>
+        function changeStatus() {
+            var status = document.getElementById("cashcard");
+            if (status.value == "Cash") {
+                document.getElementById("namecard").style.visibility = "hidden";
+                document.getElementById("innamecard").style.visibility = "hidden";
+                document.getElementById("cdnumber").style.visibility = "hidden";
+                document.getElementById("incdnumber").style.visibility = "hidden";
+                document.getElementById("expirydate").style.visibility = "hidden";
+                document.getElementById("inexpirydate").style.visibility = "hidden";
+                document.getElementById("cvvnumber").style.visibility = "hidden";
+                document.getElementById("incvvnumber").style.visibility = "hidden";
+            } else {
+                document.getElementById("namecard").style.visibility = "visible";
+                document.getElementById("innamecard").style.visibility = "visible";
+                document.getElementById("cdnumber").style.visibility = "visible";
+                document.getElementById("incdnumber").style.visibility = "visible";
+                document.getElementById("expirydate").style.visibility = "visible";
+                document.getElementById("inexpirydate").style.visibility = "visible";
+                document.getElementById("cvvnumber").style.visibility = "visible";
+                document.getElementById("incvvnumber").style.visibility = "visible";
+            }
+        }
+        function validateCardNumber() {
+        const cardNumber = document.getElementById('incdnumber');
+        const cardValue = cardNumber.value.trim();
+        if (cardValue === "") {
+            document.getElementById("cdnumber-error").innerText = "Card Number is required";
+            return false;
+        } else if (cardValue.length < 8 || cardValue.length > 19 || isNaN(cardValue)) {
+            document.getElementById("cdnumber-error").innerText = "Enter a valid card number";
+            return false;
+        }
+        return true;
+    }
+
+    function validateCVVNumber() {
+        const cvvNumber = document.getElementById('incvvnumber');
+        const cvvValue = cvvNumber.value.trim();
+        if (cvvValue === "") {
+            document.getElementById("cvvnumber-error").innerText = "CVV Number is required";
+            return false;
+        } else if (cvvValue.length !== 3 || isNaN(cvvValue)) {
+            document.getElementById("cvvnumber-error").innerText = "Enter a valid CVV number";
+            return false;
+        }
+        return true;
+    }
+
+    function validateForm() {
+        const isCardNumberValid = validateCardNumber();
+        const isCVVNumberValid = validateCVVNumber();
+        return isCardNumberValid && isCVVNumberValid;
+    }
+
+    function signIn(event) {
+        event.preventDefault();
+        if (validateForm()) {
+            alert("Payment Successful!");
+            window.location.href = "contactpage.html";
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,136 @@
+*{
+    margin: 0px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+} 
+
+
+
+ul{
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(15, 162, 188);
+    text-align: center; 
+    width: 1366px;
+    display: flex;
+    flex-wrap: wrap;
+ } 
+ 
+
+
+ li{
+     display: inline-block;
+     cursor: pointer;
+     
+ }
+
+
+ li a{
+     display: block;
+     color: white;
+     padding: 40px 46px;
+     text-decoration: none;
+     font-size: large;
+ }
+
+ li a:hover{
+     background-color: palevioletred;  
+ }
+
+ .vectorobject{
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.vectorobject img{
+    width: 65px;
+    height: 35px;
+    top: 30px;
+    left: 75px;
+}
+
+ .header{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bodyrectangle{
+    position: absolute;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(228, 197, 224);
+    width: 1366px;
+     height: 525px;
+     top: 100px;
+     left: 0px;
+} 
+
+
+.glow {
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+    top: -210px;
+    left: -20px;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+  
+.bodyrightimg{
+    position: absolute;
+}
+
+.bodyrightimg img{
+    top: 20px;
+    width: 350px;
+    height: 246px;
+    left: 400px; 
+}
+
+
+.bodyleftimg{
+    position: absolute;
+}
+
+.bodyleftimg img{
+    top: 20px;
+    width: 350px;
+    height: 246px;
+    right: 490px; 
+}
+
+
+.bodymid{
+   position: absolute;
+}
+
+.bodymid video{
+    top: 205px;
+    width: 450px;
+    height: 330px;
+    left: 405px; 
+    border-radius: 5px;
+}
+ 
+
+
+ 

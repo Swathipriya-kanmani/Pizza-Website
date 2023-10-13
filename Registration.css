@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+body{
+    height: auto;
+    background: url('images/img3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form-group input:focus{
+    outline: 0;
+}
+.form-group.success input{
+    border-color: #09c372;
+}
+.form-group.error input{
+    border-color: #ff3860;
+}
+.form-group .error{
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+
+
+

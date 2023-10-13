@@ -1,0 +1,60 @@
+*{
+    position: relative;
+ }
+ 
+ body {
+     position: absolute;
+     margin-bottom: 60px;
+     background-image: url('./images/img3.jpg');
+     background-repeat: no-repeat;
+     height: 100%;
+     background-size: cover;
+     overflow: hidden;
+ }
+ 
+ h1{
+    position: absolute;
+  width: 550px;
+  height: 150px;
+  font-weight: 800;
+  margin-left: 500px;
+ }
+
+ h2{
+    position: absolute;
+   margin-top: 80px;
+  margin-left: 500px;
+  width: 550px;
+  height: 150px;
+  
+ }
+
+ h3{
+    position: absolute;
+   margin-top: 120px;
+  margin-left: 500px;
+  width: 550px;
+  height: 150px;
+ }
+
+
+ span{
+    position: absolute;
+   margin-top: 165px;
+  margin-left: 500px;
+  width: 550px;
+  height: 150px;
+ }
+
+
+ p{
+    position: absolute;
+   margin-top: 200px;
+  margin-left: 500px;
+  width: 550px;
+  height: 150px;
+ }
+
+
+
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="./menupage.css">
+        <link rel="stylesheet" href="cartpagejs.js">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+       
+    </head>
+    <body>
+       
+        <div class="Veg" id="Ve"> 
+            <h1>Menu</h1>
+           <h2> Veg Pizza Menu </h2> 
+        </div>
+        
+      <div class="box">
+        <div class="cart-count">0</div>
+        <ion-icon name="cart"  id="cart-icon" ></ion-icon>
+      </div>
+
+      <div class="cart">
+        <div class="cart-title">Cart Items</div>
+        <div class="cart-content">
+
+        </div>
+
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price" id="totprice">Rs.0</div>
+              </div>
+        
+              <button class="btn-buy" id="btnbuying">Place Order</button>
+        
+              <ion-icon name="close" id="cart-close"></ion-icon>
+        
+       </div>
+
+        <section class="items">
+            <div class="item" id="vegPizza1">
+                <img src="./images/VegPizza1.jpg" class="food-img">
+                <h3 class="food-title">Veggie Paradise</h3>
+                <span class="food-price">Rs.740</span>
+                <button id="VegParadise" class="add-cart">Add To Cart</button>
+            </div>
+            <div class="item" id="ZucchiniPizza">
+                <img src="./images/VegPizza2.avif" class="food-img">
+                <h3 class="food-title">Zucchini Pizza</h3>
+                <span class="food-price">Rs.540</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="item" id="SproutsPizza">
+                <img src="./images/VegPizza3.jpg" class="food-img">
+                <h3 class="food-title">Sprouts Pizza</h3>
+                <span class="food-price">Rs.740</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="item" id="FarmHousepizza">
+                <img src="./images/VegPizza4.jpg" class="food-img">
+                <h3 class="food-title">FarmHouse Pizza</h3>
+                <span class="food-price">Rs.700</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="item" id="PeppyPaneerpizza">
+                <img src="./images/VegPizza5.jpg" class="food-img">
+                <h3 class="food-title">Peppy Paneer Pizza</h3>
+                <span class="food-price">Rs.499</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="item" id="GoldenCornPizza">
+                <img src="./images/VegPizza6.avif" class="food-img">
+                <h3 class="food-title">Golden Corn Pizza</h3>
+                <span class="food-price">Rs.399</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+        </section>
+
+        <div class="NonVeg" id="NVe"> 
+           <h2> Non-Veg Pizza Menu </h2> 
+        </div>
+
+        <section class="nvitems">
+            <div class="nvitem" id="ChickenGoldenDelightPizza">
+                <img src="./images/NonVegPizza1.png" class="food-img">
+                <h3 class="food-title">Chicken Golden Delight Pizza</h3>
+                <span class="food-price">Rs.420</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="nvitem" id="ChickenSausagePizza">
+                <img src="./images/NonVegPizza2.jpg" class="food-img">
+                <h3 class="food-title">Chicken Sausage Pizza</h3>
+                <span class="food-price">Rs.940</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="nvitem" id="PepperoniPizza">
+                <img src="./images/NonVegPizza3.jpg" class="food-img">
+                <h3 class="food-title">Pepperoni Pizza</h3>
+                <span class="food-price">Rs.799</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="nvitem" id="GamberiPizza">
+                <img src="./images/NonVegPizza4.jpg" class="food-img">
+                <h3 class="food-title">Gamberi Pizza</h3>
+                <span class="food-price">Rs.299</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="nvitem" id="BarbequeChickenPizza">
+                <img src="./images/NonVegPizza5.jpg" class="food-img">
+                <h3 class="food-title">Barbeque Chicken Pizza</h3>
+                <span class="food-price">Rs.500</span>
+                <button class="add-cart">Add To Cart</button>
+            </div>
+            <div class="nvitem" id="ClassicChickenPizza">
+                <img src="./images/NonVegPizza6.jpg" class="food-img">
+                <h3 class="food-title">Classic Chicken Pizza</h3>
+                <span class="food-price">Rs.620</span>
+                <button class="add-cart">Add To Cart</button>
+            
+        </section>
+    </div>
+
+        <script src="menupage.js">
+//            function one(){
+//             localStorage.setItem('VegParadise',"arun")
+
+//             const VegParadise = document.getElementById("VegParadise");
+//             window.location.href ='cartpage.html';
+
+//             VegParadise.addEventListener("click", function() {
+
+// const PizzaName = document.getElementById("VegParadise");
+// var PizzaName =["Veggie Paradise","Rs.499", "Rs.10"];
+
+// const PizzaName = document.getElementById("pname");
+// const PizzaPrice = document.getElementById("pcost");
+// const GST = document.getElementById("pgst");
+
+//     const user = {
+//         PizzaName: PizzaName,
+//         PizzaPrice: PizzaPrice,
+//         GST: GST
+//     }
+
+
+// localStorage.setItem('PizzaName',"Veggie Paradise");
+// localStorage.setItem('PizzaPrice', "Rs.499");
+// localStorage.setItem('GST', "Rs.10")
+
+
+
+
+
+// const PizzaPrice = document.getElementById("VegParadise");
+// const GST = document.getElementById("VegParadise");
+
+// const user = {
+//     name: name.value,
+//     mobileno: mobileno.value,
+//     email: email.value
+// }
+
+
+// });
+
+//             }
+
+
+//             function getUser(){
+//     const user =  localStorage.getItem("user");
+
+// localStorage.getItem("Veggie Paradise");
+// localStorage.getItem("Rs.499");
+// localStorage.getItem("Rs.10")
+
+
+
+
+
+//     return users ? JSON.parse(users) : []
+// }
+
+// function updateTable()
+// {
+//     const user = getUser();
+//    tbody
+
+// let tr = "";
+
+// user.forEach((pizza, i) => {
+//   tr +=  `<tr>
+//   <td>${i + 1}</td>
+//   <td>${pizza.name}</td>
+//   <td>${pizza.email}</td>
+//   <td>${pizza.mobileno}</td>
+//   </tr>`
+// });
+
+
+
+// document.getElementById('tbodys').innerHTML = tr
+//    tbody.innerHTML = td;
+// }
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+

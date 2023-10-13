@@ -1,0 +1,76 @@
+*{
+   position: relative;
+}
+
+body {
+    position: absolute;
+    margin-bottom: 60px;
+    background-image: url('./images/img3.jpg');
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.custom{
+    padding: .1px 109px;
+
+}
+
+label{
+    font-size: 30px;
+}
+
+.crust{
+    width: 300px;
+    height: 30px;
+}
+
+.custom input[type="text"], input[type="number"], select{
+    background: transparent;
+    font-size: 16px;
+}
+
+.numberofpizzas{
+    width: 300px;
+    height: 26px;
+}
+
+
+.Slices{
+    width: 300px;
+    height: 30px;
+}
+
+
+.Toppings{
+    width: 300px;
+    height: 26px;
+}
+
+
+button{
+    padding: 5px 30px;
+  border: none;
+  outline: none;
+  background-color: violet;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 20px;
+  display: block;
+  /* margin: 0 auto; */
+  transition: 0.2s all;
+}
+
+
+
+button:hover{
+    transform: scale(1.08);
+  }
+  
+
+
+
+  

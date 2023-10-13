@@ -1,0 +1,866 @@
+--------------------------Login Html Code ------------------------------------
+
+<!DOCTYPE html>
+<html>
+ <head>
+
+    <title>
+       Login Form Practice 1
+    </title>
+    <link rel="stylesheet" href="./Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ </head>
+ <body>
+   
+   <div class="loginbox">
+      <img src="https://thumbs.dreamstime.com/b/user-icon-vector-illustration-red-background-eps-131450790.jpg" class="avatarstock">
+      <h1>Login Here</h1>
+      <form action="index.html">
+         <p>Username</p>
+         <input type="text" name="" placeholder="Enter Username" id="uname">
+         <p>Password</p>
+         <input type="password" name="" id="pass" placeholder="Enter password" id="recieve">&nbsp;&nbsp;&nbsp;&nbsp;
+         <i class="fa-solid fa-lock" id="lo"></i>
+         <i class="fa-solid fa-eye-slash" id="eye"></i>
+         
+         <div class="buttton">
+            <input type="submit" name="logn" value="Login" class="buttttoonn">
+         </div>
+         
+         <!-- <a href="#">Lost your password</a><br>
+         <a href="#">Don't have an account?</a> -->
+      </form>
+   </div>
+<script src="./login.js">
+   // function abc(){
+   //    var n = document.getElementById("send").value;
+   //    console.log("send", n);
+   //    localStorage.setItem("send", n)     
+   //    var m = document.getElementById("recieve").value;
+   //    console.log("recieve", m);
+   //    localStorage.setItem("recieve", m)      
+   // }
+
+</script>
+ </body>
+
+
+  
+</html>
+
+
+
+--------------------------Login CSS Code ------------------------------------
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url('images/img3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: sans-serif;
+    height: 500px;
+}
+
+
+
+.loginbox{
+    width: 320px;
+    height: 420px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.avatarstock{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.loginbox input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.loginbox input[type="submit"]:hover{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.loginbox a:hover{
+    color: #ffc107;
+}
+
+#lo{
+   position: absolute;
+   top: 235px;
+   left: 10px;
+}
+
+#eye{
+   position: absolute;
+   top: 236px;
+   left: 272px;
+} 
+
+
+
+--------------------------Login JS Code ------------------------------------
+
+<script src="./login.js">
+   // function abc(){
+   //    var n = document.getElementById("send").value;
+   //    console.log("send", n);
+   //    localStorage.setItem("send", n)     
+   //    var m = document.getElementById("recieve").value;
+   //    console.log("recieve", m);
+   //    localStorage.setItem("recieve", m)      
+   // }
+
+</script>
+
+
+
+--------------------------Registeration HTML Code ------------------------------------
+
+<!DOCTYPE html>
+<html>
+ <head>
+  
+    <title>
+       Registeration Form Practice 1
+    </title>
+    <link rel="stylesheet" href="./Registeration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ </head>
+ <body>
+                          
+  <div class="container">
+    <div class="title" style="text-align: center;">SignUp/Registeration Here</div>
+    <form action="" name="myForm"  method="post">
+       <div class="user-details">
+        <div class="input-box">
+             <span class="details">Name</span>
+             <input type="text" id="username" placeholder="Enter Your Name" >
+             <!-- <i class="fa fa-check-circle" aria-hidden="true"></i> -->
+             <p style="color: rgb(165, 7, 57);"> </p>
+        </div>
+        <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id="Addres" placeholder="Enter Your Address" >
+            <!-- <i class="fa fa-exclamation-circle" aria-hidden="true"></i> -->         
+            <p style="color: rgb(165, 7, 57);"> </p>
+       </div>
+       <div class="input-box">
+        <span class="details">Email</span>
+        <input type="email" id="email" placeholder="Enter Your Email ID" onblur="emails()" >
+        <p style="color: rgb(165, 7, 57);"> </p>
+   </div>
+   <div class="input-box">
+    <span class="details">Phone Number</span>
+    <input type="tel" id="phno" placeholder="Enter Your Phone Number" >
+    <p style="color: rgb(165, 7, 57);"> </p>
+</div>
+<div class="input-box">
+    <span class="details">Password</span>
+    <input type="password" id="pass" placeholder="Enter Your Password" >
+    <p style="color: rgb(165, 7, 57);"> </p>
+</div>
+<div class="input-box">
+    <span class="details">Confirm Password</span>
+    <input type="password" id="cpass" placeholder="Confirm Password" >
+    <p style="color: rgb(165, 7, 57);"> </p>
+</div>
+<div class="input-box">
+    <button class="details">Generate OTP</button>
+    <input type="text" id="otp" placeholder="Generate OTP" >
+</div>
+<div class="input-box">
+    <span class="details">Enter Captcha</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="captch" style="background: darkblue; color: white;">E387fh24</span>
+    <button class="captcha-refresh" style="background: white;">
+        <i class="fa-solid fa-arrows-rotate"></i>
+       </button>
+       <input type="text" placeholder="Enter Your Name" id="cappucha" >
+</div>
+
+       </div>
+       <div class="gender-details">
+        <input type="radio" name="gender" id="dot-1">
+        <input type="radio" name="gender" id="dot-2">
+        <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">Prefer Not to Say</span>
+            </label>
+          </div>
+       </div>
+       <div class="button">
+          <input type="submit" onclick="checkData()" class="buttton" name="register" id="submit" value="Register" >
+       </div>
+    </form>
+
+  </div>
+
+<script src="RegScript.js">
+
+
+
+
+    // function seterror(id, error)
+    // {
+    //      //sets error inside tags of id
+    //      element = document.getElementById(id);
+    //      element.getElementsByClassName('formerror')[0].innerHTML = error;
+    // }
+ 
+    // function validateForm()
+    // {
+    //       var returnval = true;
+
+    //       //perform validation and if validation fails, set the value of returnval to false
+    //       var name = document.forms['myForm']["fname"].value;
+    //        if(name.length > 5)
+    //       {
+    //         seterror("name", "Length of name is too short");
+    //         returnval = false;
+    //       }
+
+   
+           
+        
+
+    //       return returnval;
+
+
+    // }
+
+</script>
+
+ </body>
+
+  
+</html>
+
+
+
+
+--------------------------Registeration CSS Code ------------------------------------
+
+*{
+    margin: 0;
+    padding: 0;
+    background: url('images/img3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: violet;
+    color: black;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: red;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: red;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: red;
+  }
+  
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .details{
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input{
+   height: 45px;
+   width: 100%;
+   outline: none;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+   padding-left: 15px;
+   font-size: 16px;
+   border-bottom-width: 2px;
+   transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+   border-color: darkblue;
+}
+ form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+ }
+
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border-radius: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three
+{
+    border-color: #d9d9d9;
+    background: black;
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+form .button{
+    height: 45px;
+    margin: 45px 0;
+    
+}
+
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(135deg, #71b7e6, #d309b1);
+}
+
+form .button input{
+    background: linear-gradient(-135deg, #71b7e6, #e606ea);
+    
+}
+
+.user-details .fa
+{
+  position: absolute;
+  top: 82px;
+  left: 625px;
+}
+
+
+
+.user-details .input-box.error input
+{
+  border-color: red;
+  border-width: 2px;
+}
+
+.user-details .input-box.error .fa
+{
+   color: red;
+}
+
+
+.user-details .input-box.success input
+{
+  border-color: green;
+  border-width: 2px;
+}
+
+.user-details .input-box.success .fa
+{
+   color: green;
+}
+
+.input-box.error p
+{
+    color: red;
+    display: block;
+}
+
+.input-box.error p
+{
+    color: red;
+}
+
+.input-box.success span
+{
+    color: green;
+}
+
+
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .user-details .category{
+        width: 100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+
+
+--------------------------Registeration JS Code ------------------------------------
+
+
+document.getElementById("submit").addEventListener("click", function(event){
+    event.preventDefault();
+  
+    checkData();
+});
+
+
+var username = document.getElementById("username");
+var address = document.getElementById("Addres");
+var email = document.getElementById("email");
+var phonenumber = document.getElementById("phno");
+var pass = document.getElementById("pass");
+var cpass = document.getElementById("cpass");
+
+
+
+
+function checkData()
+{
+    var usernameValue = username.value.trim();
+    var addressValue = address.value.trim();
+    var emailValue = email.value.trim();
+    var phonenumberValue = phonenumber.value.trim();
+    var passValue = pass.value.trim();
+    var cpassValue = cpass.value.trim();
+
+
+
+    if(usernameValue==""){
+        setError(username, "Username can't be blank");
+    }
+    else
+    {
+        setSuccess(username);
+    }
+
+    if(addressValue==""){
+        setError(address, "Address can't be blank");
+    }
+    else
+    {
+        setSuccess(address);
+    }
+
+
+    if(emailValue==""){
+        setError(email, "Email can't be blank");
+    }
+    else if(!isEmail(emailValue)){
+        setError(email, "Email is not Valid");
+    }
+    else
+    {
+        setSuccess(email);
+    }
+
+
+    if(phonenumberValue==""){
+        setError(phonenumber, "Phone Number can't be blank");
+    }
+    else
+    {
+        setSuccess(phonenumber);
+    }
+
+    if(passValue==""){
+        setError(pass, "Password can't be blank");
+    }
+    else
+    {
+        setSuccess(pass);
+    }
+ 
+    if(cpassValue==""){
+        setError(cpass, "Password can't be blank");
+    }
+    else if(passValue!==cpassValue)
+    {
+        setError(cpass, "Password does not match");
+    }
+    else
+    {
+        setSuccess(cpass);
+    }
+}
+
+
+function setError(u, msg)
+{
+    var parentBox = u.parentElement;
+    parentBox.Classname="input-box error";
+    var p = parentBox.querySelector("p");
+    var fa = parentBox.querySelector(".fa");
+    p.innerText=msg;
+    fa.Classname="fa fa-exclamation-circle";
+}
+
+function setSuccess(u)
+{
+    var parentBox = u.parentElement;
+    parentBox.Classname="input-box success";
+    var fa = parentBox.querySelector(".fa");
+    fa.Classname="fa fa-check-circle";
+}
+
+function isEmail(e)
+{
+    var reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return reg.test(e);
+}
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------Payment JS OLD Code---------------------------------------------
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="./payment.css">
+        
+    </head>
+    <body>
+        <form class="mb-3" id="form" role="form" onsubmit="signIn(event);" autocomplete="off">
+        <div class="paym" id="payment">
+            <div> 
+                <h1>Payment</h1>
+                <label for="nameoncrd">Payment Mode</label><br><br>
+                <select name="cashcard" id="cashcard" class="cashhcard" onchange="changeStatus()">
+                    <option value="Select" disabled>------Select------</option>
+                    <option value="Card">Card</option>
+                    <option value="Cash">Cash</option>
+                </select>
+                <div class="error"></div>
+            </div>
+            <br><br><br>
+           <div> 
+            <label for="nameoncrd" id="namecard">Name On Card</label><br><br>
+            <input type="text" id="innamecard" class="nameoncard" >
+            <div class="error"></div>
+        </div>
+            <br><br><br>
+            <div> 
+            <label for="ccn" id="cdnumber">Credit Card Number</label><br><br>
+            <input type="number" class="ccn" id="incdnumber">
+            <div class="error"></div>
+            </div> 
+            <br><br><br>
+            <div> 
+            <label for="expdate" id="expirydate">Expiry Date</label><br><br>
+            <input type="date" class="ed" id="inexpirydate">
+            <div class="error"></div>
+            </div>
+            <br><br><br>
+            <div> 
+            <label for="cvvnumb" id="cvvnumber">CVV Number</label><br><br>
+            <input type="number" class="cvvnumb" id="incvvnumber"><br><br>
+            <div class="error"></div>
+            </div>
+            <br>
+            <button type="submit" id="btnsumbit">Pay</button>
+            <br><br>
+        </div>
+        </form>
+<script>
+    function changeStatus()
+    {
+        var status = document.getElementById("cashcard");
+        if(status.value == "Cash")
+        {
+            document.getElementById("namecard").style.visibility="hidden";
+            document.getElementById("innamecard").style.visibility="hidden";
+            document.getElementById("cdnumber").style.visibility="hidden";
+            document.getElementById("incdnumber").style.visibility="hidden";
+            document.getElementById("expirydate").style.visibility="hidden";
+            document.getElementById("inexpirydate").style.visibility="hidden";
+            document.getElementById("cvvnumber").style.visibility="hidden";
+            document.getElementById("incvvnumber").style.visibility="hidden";
+        }
+        else
+        {
+            document.getElementById("namecard").style.visibility="visible";
+            document.getElementById("innamecard").style.visibility="visible";
+            document.getElementById("cdnumber").style.visibility="visible";
+            document.getElementById("incdnumber").style.visibility="visible";
+            document.getElementById("expirydate").style.visibility="visible";
+            document.getElementById("inexpirydate").style.visibility="visible";
+            document.getElementById("cvvnumber").style.visibility="visible";
+            document.getElementById("incvvnumber").style.visibility="visible";
+        }
+    }
+
+    var form = document.getElementById('form');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            validatecardnumber();
+            validatecvvnumber();
+            saveFormData();
+        });
+
+
+
+        function validateusername() {
+            const username = document.getElementById("innamecard");
+            const usernamevalue = username.value.trim();
+            if (usernamevalue === '') {
+                alert("Card Name Should Not Be Empty");
+            }
+            else {
+                // alert("Proceed");
+            };
+        }
+
+
+
+        function validatecardnumber() {
+            const cardnumber = document.getElementById('incdnumber');
+            const cardvalue = cardnumber.value.trim();
+            if (cardvalue === "") {
+                alert("Card Number is required");
+                
+            }
+            else if (cardvalue.length <= 8) {
+                alert("Enter valid card Number minimum of 8 digits");
+            }
+            else if (cardvalue.length >= 19) {
+                alert("Enter valid card Number maximum of 19 digits");
+            }
+            else if (isNaN(cardvalue)) {
+                alert("Enter valid Numeric values");
+            }
+            else {
+                alert("Proceed");
+            }
+        }
+        
+
+        function validatecvvnumber() {
+            const cvvnumber = document.getElementById('incvvnumber');
+            const cvvvalue = cvvnumber.value.trim();
+            if (cvvvalue === "") {
+                alert("CVV Number is required");
+            }
+            else if (cvvvalue.length >= 4) {
+                alert("Enter valid CVV Number maximum of 4 digits");
+            }
+            else if (isNaN(cvvvalue)) {
+                alert("Enter valid Numeric values");
+            }
+            else {
+                alert("Proceed");
+            }
+        }
+        
+
+        const username = document.getElementById("innamecard");
+        const cardnumber = document.getElementById('incdnumber');
+        const cvvnumber = document.getElementById('incvvnumber');
+    
+
+
+
+
+        function validatebtnform() {
+            const isvalidateusername = validateusername();
+            const isvalidatecardnumber = validatecardnumber();
+            const isvalidatecvvnumber = validatecvvnumber();
+           
+           
+            if (isvalidateusername && isvalidatecardnumber && isvalidatecvvnumber == "") {
+                // submitBtn.disabled = false;
+                document.getElementById("btnsumbit").disabled = false;
+
+            } else {
+                // submitBtn.disabled = true;
+                document.getElementById("btnsumbit").disabled = true;
+
+            }
+        }
+
+        function disableBtnOnSubmit() {
+            // submitBtn.disabled = true;
+            document.getElementById("btnsumbit").disabled = true;
+            window.location.href = "contactpage.html";
+            alert("Payment successfully");
+
+        }
+
+
+
+        username.addEventListener('input', validatebtnform);
+        cardnumber.addEventListener('input', validatebtnform);
+        cvvnumber.addEventListener('input', validatebtnform);
+        document.getElementById('form').addEventListener('submit', disableBtnOnSubmit);
+
+
+
+</script>
+
+
+<script src="payment.js"></script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
